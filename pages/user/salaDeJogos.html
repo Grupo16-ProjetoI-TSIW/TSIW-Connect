@@ -39,42 +39,29 @@
             </div>
         </nav>
     </header>
-    <section class="conteudo_principal">
-        <img src="/assets/images/fundo_escape_room.jpeg" alt="Background of an escape room" class="img-fluid" usemap="#room-map">
-        <map name="room-map">
-            <area alt="table" id="table" href="#" coords="407,470,605,593" shape="rect">
-        </map>
+    <section class="conteudo_principal position-relative">
+        <img src="/assets/images/fundo_escape_room.jpeg" alt="Background of an escape room" class="img-fluid">
+        <div id="table-overlay" class="overlay" style="position: absolute; top: 420px; left: 365px; width: 180px; height: 120px;"></div>
     </section>
 
-    <!-- Modal Structure -->
     <div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content custom-modal-background">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="questionModalLabel">Pergunta</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="questionModalLabel">Question</h5>
                 </div>
-                <div class="modal-body">
-                    <p>Pergunta?</p>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" type="button">Opção 1</button>
-                        <button class="btn btn-primary" type="button">Opção 2</button>
-                        <button class="btn btn-primary" type="button">Opção 3</button>
-                        <button class="btn btn-primary" type="button">Opção 4</button>
-                    </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('table').addEventListener('click', function(event) {
-            event.preventDefault();
-            var myModal = new bootstrap.Modal(document.getElementById('questionModal'), {});
-            myModal.show();
-        });
-        
-    </script>
+    <script src="/assets/js/init.js"></script>
+    <script src="/assets/js/salaDeJogosModel.js"></script>
+    <script src="/assets/js/salaDeJogosView.js"></script>
+    <script src="/assets/js/salaDeJogosController.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
