@@ -26,7 +26,8 @@ header {
     justify-content: center;
     height: 100%;
     width: 100%;
-    margin-top: 70px; /* Adjust for header height */
+    margin-top: 180px; 
+    z-index: 1;
 }
 
 .conteudo_principal img {
@@ -100,7 +101,35 @@ h1 {
 }
 
 .overlay:hover {
-    outline: 2px solid #FEC601; 
+    outline: 5px solid #FEC601; 
+}
+.overlay.correct {
+    outline: 5px solid #008000; 
+    cursor: not-allowed; 
+    pointer-events: none;
+}
+#timer-container {
+    margin-top: 60px; 
+    position: fixed;
+    top: 40px;
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: #131a2c;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    z-index: 9999;
 }
 
+#initial-page {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0b1221;
+    color: #ffffff;
+}
 

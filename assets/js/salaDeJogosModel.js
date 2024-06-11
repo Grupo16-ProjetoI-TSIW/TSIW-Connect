@@ -1,14 +1,13 @@
-
 class QuestionModel {
-    constructor() {
-        this.questions = JSON.parse(localStorage.getItem('questions')) || [];
-    }
-
     getQuestions() {
-        return this.questions;
+        return JSON.parse(localStorage.getItem('questions'));
     }
 
     getQuestionById(id) {
-        return this.questions.find(question => question.id_pergunta === id);
+        const questions = this.getQuestions();
+        return questions.find(question => question.id_pergunta === id);
     }
 }
+
+
+

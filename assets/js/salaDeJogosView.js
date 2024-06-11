@@ -3,7 +3,9 @@ class QuestionView {
         this.modal = document.getElementById('questionModal');
         this.modalTitle = document.getElementById('questionModalLabel');
         this.modalBody = this.modal.querySelector('.modal-body');
-        this.overlay = document.getElementById('table-overlay');
+        this.timerElement = document.getElementById('timer');
+        this.intervalId = null;
+        this.timeLeft = 600; // 10 minutes in seconds
     }
 
     renderQuestion(question) {
@@ -32,7 +34,44 @@ class QuestionView {
         });
     }
 
-    disableOverlay() {
-        this.overlay.removeEventListener('click', this.showModal);
+    disableOverlay(overlay) {
+        overlay.classList.add('correct');
+        overlay.style.pointerEvents = 'none';
+    }
+
+    startTimer() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+        }
+
+        this.updateTimerDisplay(this.timeLeft);
+
+        this.intervalId = setInterval(() => {
+            this.timeLeft -= 1;
+            if (this.timeLeft < 0) {
+                clearInterval(this.intervalId);
+                this.timeUp();
+            } else {
+                this.updateTimerDisplay(this.timeLeft);
+            }
+        }, 1000);
+    }
+
+    updateTimerDisplay(timeLeft) {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        this.timerElement.innerText = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    }
+
+    timeUp() {
+        alert('Time is up!');
+        const questionModal = bootstrap.Modal.getInstance(this.modal);
+        questionModal.hide();
+    }
+
+    subtractTime(seconds) {
+        this.timeLeft -= seconds;
+        if (this.timeLeft < 0) this.timeLeft = 0;
+        this.updateTimerDisplay(this.timeLeft);
     }
 }

@@ -39,9 +39,21 @@
             </div>
         </nav>
     </header>
-    <section class="conteudo_principal position-relative">
+    <div id="initial-page">
+        <div class="d-flex justify-content-center align-items-center flex-column" style="height: 100vh;">
+            <h1>Bem-vindo à Sala de Jogos</h1>
+            <button id="start-button" class="btn btn-primary btn-lg mt-3">Jogar</button>
+        </div>
+    </div>
+    <section id="game-page" class="conteudo_principal position-relative" style="display: none;">
+        <div id="timer-container">
+        <span id="timer">10:00</span>
+        </div>
         <img src="/assets/images/fundo_escape_room.jpeg" alt="Background of an escape room" class="img-fluid">
-        <div id="table-overlay" class="overlay" style="position: absolute; top: 420px; left: 365px; width: 180px; height: 120px;"></div>
+        <div id="table-overlay-1" class="overlay" style="position: absolute; top: 330px; left: 295px; width: 140px; height: 100px;"></div>
+        <div id="table-overlay-2" class="overlay" style="position: absolute; top: 350px; left: 190px; width: 100px; height: 80px;"></div>
+        <div id="table-overlay-3" class="overlay" style="position: absolute; top: 500px; left: 190px; width: 50px; height: 80px;"></div>
+
     </section>
 
     <div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
