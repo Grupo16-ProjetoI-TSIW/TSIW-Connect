@@ -1,4 +1,3 @@
-initdata();
 function initdata() {
     if (!localStorage.questions) {
         const questions = [
@@ -49,6 +48,31 @@ function initdata() {
             },
         ];
         localStorage.setItem("questions", JSON.stringify(questions));
+    }
+    if (!localStorage.words) {
+        const words = [
+            {
+                id_palavra: 1,
+                palavra: "Desenvolver",
+            },
+            {
+                id_palavra: 2,
+                palavra: "Depuração",
+            },
+            {
+                id_palavra: 3,
+                palavra: "Algoritmia",
+            },
+            {
+                id_palavra: 4,
+                palavra: "Compilador",
+            },
+            {
+                id_palavra: 5,
+                palavra: "Framework",
+            },
+        ];
+        localStorage.setItem("words", JSON.stringify(words));
     }
 }
 

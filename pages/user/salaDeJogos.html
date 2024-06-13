@@ -41,13 +41,19 @@
     </header>
     <div id="initial-page">
         <div class="d-flex justify-content-center align-items-center flex-column" style="height: 100vh;">
-            <h1>Bem-vindo à Sala de Jogos</h1>
+            <h1>Escape Room</h1>
+            <h2>Code Clash</h2>
             <button id="start-button" class="btn btn-primary btn-lg mt-3">Jogar</button>
+            <button id="instructions-button" class="btn btn-info btn-lg mt-3">Instruções</button>
+
         </div>
     </div>
     <section id="game-page" class="conteudo_principal position-relative" style="display: none;">
         <div id="timer-container">
         <span id="timer">10:00</span>
+        </div>
+        <div id="word-container">
+            <span id="word">_ _ _ _ _ _ _ _ _ _ </span>
         </div>
         <img src="/assets/images/fundo_escape_room.jpeg" alt="Background of an escape room" class="img-fluid">
         <div id="table-overlay-1" class="overlay" style="position: absolute; top: 330px; left: 295px; width: 140px; height: 100px;"></div>
@@ -63,6 +69,73 @@
                     <h5 class="modal-title" id="questionModalLabel">Question</h5>
                 </div>
                 <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="instructionsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="instructionsModalLabel">Instruções</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="CorrectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="CorrectModalLabel">Resposta Correta</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="IncorrectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="IncorrectModalLabel">Resposta Incorreta</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="WinModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="WinModalLabel">VITÓRIA</h5>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="LoseModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="LoseModalLabel">DERROTA</h5>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-danger" id="retry-button">Tentar Novamente</button>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
