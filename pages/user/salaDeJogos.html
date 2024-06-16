@@ -55,11 +55,22 @@
         <div id="word-container">
             <span id="word">_ _ _ _ _ _ _ _ _ _ </span>
         </div>
-        <img src="/assets/images/fundo_escape_room.jpeg" alt="Background of an escape room" class="img-fluid">
-        <div id="table-overlay-1" class="overlay" style="position: absolute; top: 330px; left: 295px; width: 140px; height: 100px;"></div>
-        <div id="table-overlay-2" class="overlay" style="position: absolute; top: 350px; left: 190px; width: 100px; height: 80px;"></div>
-        <div id="table-overlay-3" class="overlay" style="position: absolute; top: 500px; left: 190px; width: 50px; height: 80px;"></div>
+        <div class="image-container" style="position: relative; width: 100%; max-width: 800px;">
+            <img src="/assets/images/fundo_escape_room.png" alt="Background of an escape room" class="img-fluid">
+            <div id="table-overlay-1" class="overlay" style="position: absolute; top: 45.75%; left: 41%; width: 17.5%; height: 12.5%;"></div>
+            <div id="table-overlay-2" class="overlay" style="position: absolute; top: 47.75%; left: 26.75%; width: 12.5%; height: 10%;"></div>
+            <div id="table-overlay-3" class="overlay" style="position: absolute; top: 67.5%; left: 27.75%; width: 6.25%; height: 13%;"></div>
+            <div id="table-overlay-4" class="overlay" style="position: absolute; top: 75%; left: 5%; width: 6.25%; height: 5%;"></div>
+            <div id="table-overlay-5" class="overlay" style="position: absolute; top: 52%; left: 7%; width: 12%; height: 12%;"></div>
+            <div id="table-overlay-6" class="overlay" style="position: absolute; top: 48%; left: 60%; width: 12%; height: 10%;"></div>
+            <div id="table-overlay-7" class="overlay" style="position: absolute; top: 32%; left: 80%; width: 8%; height: 7%;"></div>
+            <div id="table-overlay-8" class="overlay" style="position: absolute; top: 90%; left: 45.75%; width: 9%; height: 9%;"></div>
+            <div id="table-overlay-9" class="overlay" style="position: absolute; top: 10%; left: 48%; width: 3%; height: 11%;"></div>
 
+
+
+
+        </div>
     </section>
 
     <div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
@@ -114,15 +125,16 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="WinModal" tabindex="-1" aria-hidden="true">
+    <div class="modal fade" id="WinModal" tabindex="-1" aria-labelledby="WinModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content custom-modal-background">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="WinModalLabel">VITÓRIA</h5>
+                    <h5 class="modal-title" id="WinModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body"></div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -142,6 +154,19 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="WinModal" tabindex="-1" aria-labelledby="WinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="WinModalLabel">GANHASTE!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="WinModalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="/assets/js/init.js"></script>
     <script src="/assets/js/salaDeJogosModel.js"></script>

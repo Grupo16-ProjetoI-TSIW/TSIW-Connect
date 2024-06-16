@@ -29,7 +29,6 @@ class QuestionController {
 
         this.view.bindOptionClick(this.handleOptionClick.bind(this));
     }
-
     startGame() {
         document.getElementById('initial-page').style.display = 'none';
         document.getElementById('game-page').style.display = 'block';
@@ -69,23 +68,25 @@ class QuestionController {
         const correctOption = this.model.getQuestionById(this.currentQuestionId).opção_correta;
 
         if (selectedOption === correctOption) {
+            alert('Correto!');
+            respostasCorretas+=1;
+            console.log(respostasCorretas);
             this.view.disableOverlay(this.currentOverlay);
             const questionModal = bootstrap.Modal.getInstance(document.getElementById('questionModal'));
             questionModal.hide();
             this.view.revealLetterAtRandom();
-            
+            console.log(this.questions.length);
+            if (respostasCorretas=== this.questions.length) {
+                const finalScore = this.view.calculateFinalScore();
+                this.view.showWinModal(finalScore);
+            }
         } else {
-            this.IncorrectmodalTitle.innerText = 'RESPOSTA INCORRETA';
-            this.IncorrectmodalBody.innerHTML = `
-                <p>PERDESTE 30 SEGUNDOS</p>
-            `;
-            var myModal = new bootstrap.Modal(this.Incorrectmodal, {});
-            myModal.show();
+            alert('Incorreto! Tente novamente.');
             this.view.subtractTime(30);
         }
     }
 }
-
+let respostasCorretas=0;
 document.addEventListener('DOMContentLoaded', () => {
     const model = new QuestionModel();
     const view = new QuestionView();

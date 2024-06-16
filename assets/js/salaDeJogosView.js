@@ -6,11 +6,15 @@ class QuestionView {
         this.Losemodal = document.getElementById('LoseModal');
         this.LosemodalTitle = document.getElementById('LoseModalLabel');
         this.LosemodalBody = this.Losemodal.querySelector('.modal-body');
+        this.Winmodal = document.getElementById('WinModal');
+        this.WinmodalTitle = document.getElementById('WinModalLabel');
+        this.WinmodalBody = this.Winmodal.querySelector('.modal-body');
         this.timerElement = document.getElementById('timer');
         this.intervalId = null;
-        this.timeLeft = 5; // 10 minutes
+        this.timeLeft = 600; 
         this.wordToGuess = '';
         this.revealedLetters = [];
+        this.score = 0;
     }
 
     renderQuestion(question) {
@@ -117,8 +121,34 @@ class QuestionView {
     resetGame() {
         var myModal = new bootstrap.Modal(this.Losemodal, {});
         myModal.hide();
-        this.timeLeft = 600; 
+        this.timeLeft = 600;
+        this.correctAnswers = 0;
         document.getElementById('initial-page').style.display = 'block';
         document.getElementById('game-page').style.display = 'none';
+        
+        document.querySelectorAll('.overlay').forEach(overlay => {
+            overlay.classList.remove('correct');
+            overlay.style.pointerEvents = 'auto';
+        });
+
+        this.wordToGuess = '';
+        this.revealedLetters = [];
+        this.updateTimerDisplay(this.timeLeft);
+        
+    }
+    calculateFinalScore() {
+        const baseScore = 1000;
+        const timeBonus = this.timeLeft * 10;
+        console.log(baseScore + timeBonus);
+        return baseScore + timeBonus;
+    }
+    showWinModal(score) {
+        this.WinmodalTitle.innerText = 'VENCESTE!';
+        this.WinmodalBody.innerHTML = `
+            <p>Parabéns! Respondeu corretamente a todas as perguntas.</p>
+            <p>Sua pontuação final é: ${score}</p>
+            <button type="button" class="btn btn-success" onclick="controller.resetGame()" data-bs-dismiss="modal">Jogar Novamente</button>`;
+        var myModal = new bootstrap.Modal(this.Winmodal, {});
+        myModal.show();
     }
 }

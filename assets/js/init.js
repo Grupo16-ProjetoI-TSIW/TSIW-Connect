@@ -1,5 +1,5 @@
 function initdata() {
-    if (!localStorage.questions) {
+    if (!localStorage.getItem("questions")) {
         const questions = [
             {
                 id_pergunta: 1,
@@ -8,7 +8,7 @@ function initdata() {
                 opção_2: "Java",
                 opção_3: "Assembly",
                 opção_4: "HTML",
-                opção_correta: "Java",
+                opção_correta: "Java"
             },
             {
                 id_pergunta: 2,
@@ -17,7 +17,7 @@ function initdata() {
                 opção_2: "15",
                 opção_3: "11",
                 opção_4: "7",
-                opção_correta: "11",
+                opção_correta: "11"
             },
             {
                 id_pergunta: 3,
@@ -26,7 +26,7 @@ function initdata() {
                 opção_2: "Tuple",
                 opção_3: "Set",
                 opção_4: "Dictionary",
-                opção_correta: "Dictionary",
+                opção_correta: "Dictionary"
             },
             {
                 id_pergunta: 4,
@@ -35,7 +35,7 @@ function initdata() {
                 opção_2: "Adicionar arquivos ao índice",
                 opção_3: "Criar um ponto de salvamento no repositório",
                 opção_4: "Mesclar branches",
-                opção_correta: "Criar um ponto de salvamento no repositório",
+                opção_correta: "Criar um ponto de salvamento no repositório"
             },
             {
                 id_pergunta: 5,
@@ -44,33 +44,69 @@ function initdata() {
                 opção_2: "Python",
                 opção_3: "JavaScript",
                 opção_4: "SQL",
-                opção_correta: "JavaScript",
+                opção_correta: "JavaScript"
             },
+            {
+                id_pergunta: 6,
+                pergunta: "Qual dos seguintes é um sistema de gerenciamento de banco de dados relacional?",
+                opção_1: "MySQL",
+                opção_2: "MongoDB",
+                opção_3: "Cassandra",
+                opção_4: "Redis",
+                opção_correta: "MySQL"
+            },
+            {
+                id_pergunta: 7,
+                pergunta: "Qual é a saída do código: print('Hello, ' + 'World!') em Python?",
+                opção_1: "Hello, World!",
+                opção_2: "HelloWorld!",
+                opção_3: "Hello, World!",
+                opção_4: "Erro",
+                opção_correta: "Hello, World!"
+            },
+            {
+                id_pergunta: 8,
+                pergunta: "Qual é o resultado da expressão lógica True and False?",
+                opção_1: "True",
+                opção_2: "False",
+                opção_3: "Erro",
+                opção_4: "None",
+                opção_correta: "False"
+            },
+            {
+                id_pergunta: 9,
+                pergunta: "Qual é o comando para criar um novo branch no Git?",
+                opção_1: "git init",
+                opção_2: "git branch",
+                opção_3: "git checkout",
+                opção_4: "git merge",
+                opção_correta: "git branch"
+            }
         ];
         localStorage.setItem("questions", JSON.stringify(questions));
     }
-    if (!localStorage.words) {
+    if (!localStorage.getItem("words")) {
         const words = [
             {
                 id_palavra: 1,
-                palavra: "Desenvolver",
+                palavra: "Desenvolver"
             },
             {
                 id_palavra: 2,
-                palavra: "Depuração",
+                palavra: "Depuração"
             },
             {
                 id_palavra: 3,
-                palavra: "Algoritmia",
+                palavra: "Algoritmia"
             },
             {
                 id_palavra: 4,
-                palavra: "Compilador",
+                palavra: "Compilador"
             },
             {
                 id_palavra: 5,
-                palavra: "Framework",
-            },
+                palavra: "Framework"
+            }
         ];
         localStorage.setItem("words", JSON.stringify(words));
     }
