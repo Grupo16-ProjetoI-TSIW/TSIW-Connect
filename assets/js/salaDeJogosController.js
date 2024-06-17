@@ -46,7 +46,7 @@ class QuestionController {
         this.modalBody.innerHTML = `
             <p>Neste Escape Room, terás de escapar de um ataque de um hacker, respondendo a perguntas quando se clica em objetos informáticos.</p>
             <p>Cada objeto dá direito a uma letra da palavra para fugir do quarto.</p>
-            <p>A cada pergunta errada irá diminuir 30 segundos ao tempo.</p>
+            <p>A cada resposta errada irá diminuir 30 segundos ao tempo.</p>
             <p>Tens 10 minutos para concluir o desafio.</p>
             <p>BOA SORTE.</p>
         `;
@@ -68,7 +68,11 @@ class QuestionController {
         const correctOption = this.model.getQuestionById(this.currentQuestionId).opção_correta;
 
         if (selectedOption === correctOption) {
-            alert('Correto!');
+            this.CorrectmodalTitle.innerText = 'ACERTASTE!';
+            this.CorrectmodalBody.innerHTML = `
+                <p>Parabéns! Continua assim.</p>`;
+            var myModal = new bootstrap.Modal(this.Correctmodal, {});
+            myModal.show();            
             respostasCorretas+=1;
             console.log(respostasCorretas);
             this.view.disableOverlay(this.currentOverlay);
@@ -81,7 +85,12 @@ class QuestionController {
                 this.view.showWinModal(finalScore);
             }
         } else {
-            alert('Incorreto! Tente novamente.');
+            this.IncorrectmodalTitle.innerText = 'FALHASTE!';
+            this.IncorrectmodalBody.innerHTML = `
+                <p>Não desanimes! Tu Consegues.</p>`;
+            var myModal = new bootstrap.Modal(this.Incorrectmodal, {});
+            myModal.show();
+                                    
             this.view.subtractTime(30);
         }
     }

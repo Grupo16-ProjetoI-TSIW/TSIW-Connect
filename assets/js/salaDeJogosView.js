@@ -143,9 +143,12 @@ class QuestionView {
         return baseScore + timeBonus;
     }
     showWinModal(score) {
+        document.getElementById('game-page').style.display = 'none';
+        document.getElementById('initial-page').style.display = 'block';
         this.WinmodalTitle.innerText = 'VENCESTE!';
         this.WinmodalBody.innerHTML = `
             <p>Parabéns! Respondeu corretamente a todas as perguntas.</p>
+            <p>A palavra para fugir é:${this.wordToGuess}<p>
             <p>Sua pontuação final é: ${score}</p>
             <button type="button" class="btn btn-success" onclick="controller.resetGame()" data-bs-dismiss="modal">Jogar Novamente</button>`;
         var myModal = new bootstrap.Modal(this.Winmodal, {});
