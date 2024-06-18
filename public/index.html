@@ -9,13 +9,28 @@
 <body>
     <header>
         <nav>
-            <div class="logo">TSIW <span>CONNECT</span></div>
+            <div class="logo">
+                <a href="index.html"><img src="/assets/images/logo.png" alt="logo"></a>
+            </div>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="">TSIW</a></li>
-                <li><a href="esmad.html">A ESMAD</a></li>
-                <li><a href="">TSIW EXPERIENCE</a></li>
-                <li><a href="perfil.html" class="profile-icon"></a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/projetos.html">Projetos</a></li>
+                        <li><a href="/pages/user/testemunhos.html">Testemunhos</a></li>
+                        <li><a href="/pages/user/planoCurricular.html">Plano Curricular</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/user/esmad.html">A ESMAD</a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/salaDeJogos.html">Sala de Jogos</a></li>
+                        <li><a href="/pages/user/midia.html">Conteúdos Mídia</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/user/perfil.html" class="profile-icon"><img src="/assets/images/profile-icon.png" alt=""></a></li>
             </ul>
         </nav>
     </header>
