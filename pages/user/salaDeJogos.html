@@ -10,34 +10,30 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a class="navbar-brand logo" href="#">TSIW <span>CONNECT</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto nav-links">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">HOME</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">TSIW</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="esmad.html">A ESMAD</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">TSIW EXPERIENCE</a>
-                        </li>
-                        <li class="nav-item profile-icon">
-                            <a class="nav-link" href="perfil.html">
-                                <img src="assets/images/profile-icon.png" alt="Profile" class="img-fluid">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <nav>
+            <div class="logo">
+                <a href="/public/index.html"><img src="/assets/images/logo.png" alt="logo"></a>
             </div>
+            <ul class="nav-links">
+                <li><a href="/public/index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/projetos.html">Projetos</a></li>
+                        <li><a href="/pages/user/testemunhos.html">Testemunhos</a></li>
+                        <li><a href="/pages/user/planoCurricular.html">Plano Curricular</a></li>
+                    </ul>
+                </li>
+                <li><a href="/pages/user/esmad.html">A ESMAD</a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/salaDeJogos.html">Sala de Jogos</a></li>
+                        <li><a href="/pages/user/midia.html">Conteúdos Mídia</a></li>
+                    </ul>
+                </li>
+                <li><a class="profile-icon"><img src="/assets/images/profile-icon.png" alt="" data-bs-toggle="modal" data-bs-target="#LoginModal"></a></li>
+            </ul>
         </nav>
     </header>
     <div id="initial-page">
@@ -157,9 +153,10 @@
             </div>
         </div>
     </div>
-
-
     <script src="/assets/js/init.js"></script>
+    <script src="/assets/js/userModel.js"></script>
+    <script src="/assets/js/userController.js"></script>
+    <script src="/assets/js/navbarView.js"></script>
     <script src="/assets/js/salaDeJogosModel.js"></script>
     <script src="/assets/js/salaDeJogosView.js"></script>
     <script src="/assets/js/salaDeJogosController.js"></script>
