@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/assets/css/adminDashboard.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <header id="navbar" class="row text-white py-3 align-items-center">
+            <div class="col-md-3 text-center">
+                <div class="logo">
+                    <img src="/assets/images/logo.png" alt="Logo" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <h1>Admin Dashboard</h1>
+            </div>
+            <div class="col-md-3 text-right">
+                <button class="btn btn-primary">Sair do Painel</button>
+            </div>
+        </header>
+        <div class="row">
+            <nav class="col-md-2 text-white p-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left active">Estatísticas da Aplicação</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Gerir Utilizadores</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Gerir Testemunhos e Projetos</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Gerir Conteúdos Mídia</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Configurar Escape Room</button></li>
+                </ul>
+            </nav>
+            <main class="col-md-10 p-4">
+                <div class="row mb-4">
+                    <div class="col-md-8 text-center">
+                        <h2>Média de Utilizadores em Simultâneo</h2>
+                        <div class="card bg-secondary text-white p-3"></div>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <h2>Número de Visitas</h2>
+                        <div class="card bg-secondary text-white p-3"></div>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <h2>Páginas Mais Visitadas</h2>
+                        <div class="card bg-secondary text-white p-3"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="row text-white py-3 text-center justify-content-center">
+            <div class="col-md-3">
+                <img src="/assets/images/logo_pporto.png" alt="P.PORTO Logo" class="img-fluid mb-2">
+                <img src="/assets/images/logo_esmad.png" alt="P.PORTO Logo" class="img-fluid">
+
+            </div>
+            <div class="col-md-3">
+                <address>
+                    Escola Superior de Media Artes e Design<br>
+                    Rua D. Sancho I, n.º 981<br>
+                    4480-876 Vila do Conde, Portugal<br>
+                    Tel: +351 252 646 516<br>
+                    Email: gmr@esmad.ipp.pt
+                </address>
+            </div>
+            <div class="col-md-3">
+                TSIW Connect © 2024<br>
+                Todos os direitos reservados<br>
+                Mapa do Site | Acessibilidade
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</html>

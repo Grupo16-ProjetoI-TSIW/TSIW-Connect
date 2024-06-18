@@ -1,4 +1,19 @@
 function initdata() {
+    if (!localStorage.getItem("users")) {
+        const users = [
+            {
+                id: 1,
+                tipo: 'admin',
+                nickname: 'admin123',
+                email:'admin123@gmail.com',
+                nome: 'Administrador',
+                password: '1234',
+                nivel: 1,
+                pontuacao: 0
+            }
+        ];
+        localStorage.setItem("users", JSON.stringify(users));
+    }
     if (!localStorage.getItem("questions")) {
         const questions = [
             {
@@ -81,15 +96,25 @@ function initdata() {
                 opção_3: "git checkout",
                 opção_4: "git merge",
                 opção_correta: "git branch"
+            },
+            {
+                id_pergunta: 10,
+                pergunta: "Qual é a função usada para obter a entrada do utilizador no Python?",
+                opção_1: "get_input()",
+                opção_2: "input()",
+                opção_3: "scanf()",
+                opção_4: "read()",
+                opção_correta: "input()"
             }
         ];
         localStorage.setItem("questions", JSON.stringify(questions));
     }
+    
     if (!localStorage.getItem("words")) {
         const words = [
             {
                 id_palavra: 1,
-                palavra: "Desenvolver"
+                palavra: "DataStruct"
             },
             {
                 id_palavra: 2,
@@ -101,7 +126,7 @@ function initdata() {
             },
             {
                 id_palavra: 4,
-                palavra: "Compilador"
+                palavra: "Desempenho"
             },
             {
                 id_palavra: 5,

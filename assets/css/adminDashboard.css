@@ -1,0 +1,50 @@
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #0d1326;
+    color: #fff;
+}
+
+#navbar {
+    background-color: #090B2D;
+}
+
+.logo img {
+    max-height: 30px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.card {
+    border: 2px solid #ffa500;
+    height: 150px;
+}
+
+footer {
+    background-color: #090B2D;
+    margin-bottom: 0px;
+}
+
+footer address {
+    margin: 0;
+    font-style: normal;
+}
+
+footer img {
+    width: 25%;
+    height: auto;
+}
+.nav-item button {
+    background-color:#2364AA ;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.nav-item button.active {
+    background-color:#EA7317 ;
+    
+}
+nav{
+    background-color: #090B2D;
+}

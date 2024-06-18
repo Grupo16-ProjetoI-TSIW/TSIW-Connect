@@ -39,51 +39,6 @@ h1 {
     font-family: 'Orbitron', sans-serif;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    margin: 0 10px;
-}
-
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.nav-links a:hover {
-    background: #1c2748;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.logo span {
-    color: #ff8c00;
-}
-
-.profile-icon {
-    width: 30px;
-    height: 30px;
-}
-
-.profile-icon img {
-    background: url('assets/images/profile-icon.png') no-repeat center center;
-    background-size: cover;
-    width: 30px;
-    height: 30px;
-}
 
 .custom-modal-background {
     background-color: #131a2c;
