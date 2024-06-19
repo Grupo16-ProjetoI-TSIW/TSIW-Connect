@@ -1,0 +1,14 @@
+footer {
+    background-color: #0b0e18;
+    margin-bottom: 0px;
+}
+
+footer address {
+    margin: 0;
+    font-style: normal;
+}
+
+footer img {
+    width: 25%;
+    height: auto;
+}

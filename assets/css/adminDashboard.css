@@ -22,20 +22,6 @@ header h1 {
     height: 150px;
 }
 
-footer {
-    background-color: #090B2D;
-    margin-bottom: 0px;
-}
-
-footer address {
-    margin: 0;
-    font-style: normal;
-}
-
-footer img {
-    width: 25%;
-    height: auto;
-}
 .nav-item button {
     background: linear-gradient(to bottom, #2364AA, #0b1221);
     margin-bottom: 10px;
