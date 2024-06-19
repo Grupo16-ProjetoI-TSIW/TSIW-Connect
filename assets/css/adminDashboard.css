@@ -37,14 +37,29 @@ footer img {
     height: auto;
 }
 .nav-item button {
-    background-color:#2364AA ;
+    background: linear-gradient(to bottom, #2364AA, #0b1221);
     margin-bottom: 10px;
     text-align: left;
 }
+.nav-item button:hover {
+    background: linear-gradient(to bottom, #1c2748, #0b1221);
+}
 .nav-item button.active {
-    background-color:#EA7317 ;
+    background: linear-gradient(to bottom, #EA7317, #090B2D);
     
 }
 nav{
     background-color: #090B2D;
+}
+#navbar button{
+    background: linear-gradient(to bottom, #2364AA, #0b1221);
+}
+#navbar button:hover{
+    background: linear-gradient(to bottom, #1c2748, #0b1221);
+
+}
+h4{
+    font-family: 'Orbitron';
+    font-weight: bold;
+    margin-bottom: 25px;
 }
