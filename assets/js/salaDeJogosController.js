@@ -30,6 +30,9 @@ class QuestionController {
 
         this.view.bindOptionClick(this.handleOptionClick.bind(this));
     }
+    updateQuestion(updatedQuestion) {
+        this.model.updateQuestion(updatedQuestion, updatedQuestion.id_pergunta);
+    }
     editQuestion(questionId, updatedQuestion) {
         return this.questionModel.editQuestion(questionId, updatedQuestion);
     }
