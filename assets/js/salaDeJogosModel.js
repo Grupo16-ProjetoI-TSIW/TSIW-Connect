@@ -15,6 +15,18 @@ class QuestionModel {
         const words = this.getWords();
         return words.find(word => word.id_palavra === id);
     }
+    editQuestion(questionId, updatedQuestion) {
+        const index = this.questions.findIndex(question => question.id === questionId);
+        if (index !== -1) {
+            this.questions[index] = updatedQuestion;
+            this.saveQuestions();
+            return true;
+        }
+        return false;
+    }
+    saveQuestions() {
+        localStorage.setItem('questions', JSON.stringify(this.questions));
+    }
 }
 
 

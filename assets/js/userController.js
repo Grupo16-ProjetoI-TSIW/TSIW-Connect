@@ -6,6 +6,7 @@ class UserController {
     verifyCredentials(email, password) {
         const user = this.userModel.verifyCredentials(email, password);
         if (user) {
+            sessionStorage.setItem('loggedUser', JSON.stringify(user)); // Salva a sessão do usuário
             if (user.tipo === 'admin') {
                 console.log(`Usuário ${user.email} logado como administrador.`);
                 window.location.href = '/pages/admin/adminDashboard.html';
@@ -18,7 +19,20 @@ class UserController {
             alert('Credenciais inválidas. Por favor, tente novamente.');
         }
     }
-}
 
-// Anexa a instância UserController ao objeto window para estar disponível globalmente
+    logout() {
+        sessionStorage.removeItem('loggedUser');
+        window.location.href = '/public/index.html'; 
+    }
+
+    getLoggedUser() {
+        return JSON.parse(sessionStorage.getItem('loggedUser'));
+    }
+    banUser(userId) {
+        const updatedUsers = users.filter(user => user.id !== userId);
+        localStorage.setItem('users', JSON.stringify(updatedUsers));
+    }
+}
+const userModel = new UserModel();
+const users = userModel.getUsers();
 window.UserController = new UserController();

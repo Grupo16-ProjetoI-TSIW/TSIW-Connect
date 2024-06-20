@@ -1,3 +1,4 @@
+
 class QuestionController {
     constructor(model, view) {
         this.model = model;
@@ -28,6 +29,9 @@ class QuestionController {
         });
 
         this.view.bindOptionClick(this.handleOptionClick.bind(this));
+    }
+    editQuestion(questionId, updatedQuestion) {
+        return this.questionModel.editQuestion(questionId, updatedQuestion);
     }
     startGame() {
         document.getElementById('initial-page').style.display = 'none';
@@ -101,3 +105,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const view = new QuestionView();
     const controller = new QuestionController(model, view);
 });
+
