@@ -104,6 +104,58 @@ main {
     font-weight: bold;
 }
 
+.keywords-carousel {
+    padding: 40px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    height: 50px; /* Adjust the height as needed */
+}
+
+.carousel-container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-content {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade 20s infinite;
+}
+
+.keyword {
+    font-family: Orbitron;
+    font-size: 8em;
+    font-weight: bold;
+    color: #ff8c00;
+    margin: 0;
+    display: none;
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    5%, 95% { opacity: 1; }
+}
+
+.carousel-content .keyword:nth-child(1) { animation-delay: 0s; }
+.carousel-content .keyword:nth-child(2) { animation-delay: 2s; }
+.carousel-content .keyword:nth-child(3) { animation-delay: 4s; }
+.carousel-content .keyword:nth-child(4) { animation-delay: 6s; }
+.carousel-content .keyword:nth-child(5) { animation-delay: 8s; }
+.carousel-content .keyword:nth-child(6) { animation-delay: 10s; }
+.carousel-content .keyword:nth-child(7) { animation-delay: 12s; }
+.carousel-content .keyword:nth-child(8) { animation-delay: 14s; }
+.carousel-content .keyword:nth-child(9) { animation-delay: 16s; }
+.carousel-content .keyword:nth-child(10) { animation-delay: 18s; }
+
 .projetos {
     padding: 40px;
     padding-left: 20%;
@@ -257,6 +309,35 @@ main {
 
 .experience {
     margin-top: 5px;
+}
+
+.parceiros {
+    padding: 40px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #0b0e18;
+    position: relative;
+}
+
+.parceiros h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ff8c00;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logos-container img {
+    max-width: 150px;
+    max-height: 100px;
+    object-fit: contain;
 }
 
 .custom-modal-background {

@@ -25,3 +25,22 @@ function showSlides(n) {
     slides[(slideIndex - 1) * 2 + 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const keywords = document.querySelectorAll('.keyword');
+    let currentIndex = 0;
+    
+    function showKeyword(index) {
+        keywords.forEach((keyword, i) => {
+            keyword.style.display = i === index ? 'block' : 'none';
+        });
+    }
+    
+    function nextKeyword() {
+        currentIndex = (currentIndex + 1) % keywords.length;
+        showKeyword(currentIndex);
+    }
+
+    showKeyword(currentIndex);
+    setInterval(nextKeyword, 2000);
+});
