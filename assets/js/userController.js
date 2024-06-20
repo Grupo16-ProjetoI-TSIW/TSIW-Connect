@@ -1,8 +1,9 @@
+
 class UserController {
     constructor() {
         this.userModel = new UserModel();
     }
-
+    
     verifyCredentials(email, password) {
         const user = this.userModel.verifyCredentials(email, password);
         if (user) {
@@ -11,9 +12,7 @@ class UserController {
                 console.log(`Usuário ${user.email} logado como administrador.`);
                 window.location.href = '/pages/admin/adminDashboard.html';
             } else {
-                alert('Você não tem permissão para acessar o painel de administração.');
-                // Redirecionar ou realizar outra ação para usuários comuns
-                // window.location.href = 'userDashboard.html';
+                window.location.href = '/pages/user/salaDeJogos.html';
             }
         } else {
             alert('Credenciais inválidas. Por favor, tente novamente.');
