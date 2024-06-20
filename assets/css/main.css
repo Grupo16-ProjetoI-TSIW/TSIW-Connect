@@ -27,9 +27,9 @@ main {
 .intro-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px; /* Add some gap between text-buttons and escape-room */
+    gap: 20px;
 }
 
 .text-buttons {
@@ -37,12 +37,12 @@ main {
     max-width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align text to the top */
+    justify-content: flex-start;
     text-align: left;
 }
 
 .text-content {
-    flex-grow: 1; /* Allow text content to grow */
+    flex-grow: 1;
 }
 
 .text-buttons h1 {
@@ -57,7 +57,7 @@ main {
 .buttons {
     display: flex;
     gap: 20px;
-    align-self: flex-end; /* Align buttons to the bottom */
+    align-self: flex-end;
 }
 
 .btn {
@@ -83,7 +83,7 @@ main {
     max-width: 50%;
     text-align: center;
     display: flex;
-    align-items: flex-end; /* Align image to the bottom */
+    align-items: flex-end;
 }
 
 .escape-room img {
@@ -111,7 +111,7 @@ main {
     margin-bottom: 40px;
     text-align: center;
     position: relative;
-    height: 50px; /* Adjust the height as needed */
+    height: 50px;
 }
 
 .carousel-container {
@@ -171,8 +171,8 @@ main {
 }
 
 .projetos p {
-    display: inline-block; /* To ensure proper alignment with the arrow */
-    vertical-align: middle; /* Align vertically with the arrow */
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .carousel {
@@ -219,9 +219,9 @@ main {
 
 .arrow-button {
     position: absolute;
-    top: 50px; /* Adjust this value as needed to align with the paragraph */
-    right: 22%; /* Adjust this value to bring the arrow closer */
-    transform: translateX(0); /* Remove the translateX to keep it within bounds */
+    top: 50px;
+    right: 22%;
+    transform: translateX(0);
     font-size: 2em;
     color: #ff8c00;
 }
