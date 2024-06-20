@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSIW Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/midia.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/public/index.html"><img src="/assets/images/logo.png" alt="logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/public/index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/projetos.html">Projetos</a></li>
+                        <li><a href="/pages/user/testemunhos.html">Testemunhos</a></li>
+                        <li><a href="/assets/ProjetoWebXR-main/index.html">Plano Curricular</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">TSIW EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/salaDeJogos.html">Sala de Jogos</a></li>
+                        <li><a href="/pages/user/midia.html">Conteúdos Mídia</a></li>
+                    </ul>
+                </li>
+                <li><a class="profile-icon"><img src="/assets/images/profile-icon.png" alt="" data-bs-toggle="modal" data-bs-target="#LoginModal"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="carousel-container">
+                <div class="carousel-content">
+                    <div class="carousel-slide">
+                        <img src="/assets/images/PlugIn2024/IMG_20240112_104252.jpg" alt="Event 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/assets/images/PlugIn2024/IMG_20240112_104257.jpg" alt="Event 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/assets/images/PlugIn2024/IMG_20240112_104315.jpg" alt="Event 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/assets/images/PlugIn2024/IMG_20240112_104321.jpg" alt="Event 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="/assets/images/PlugIn2024/IMG_20240112_104847.jpg" alt="Event 5">
+                    </div>
+                </div>
+            </div>
+            <div class="intro-text">
+                <h1>Plug-In 2024</h1>
+                <p>O Plug-in é um evento anual, organizado pela ESMAD, que permite juntar a comunidade da ESMAD com potenciais parceiros empresariais, de modo a fomentar possibilidades de estágios curriculares.</p>
+                <a href="https://eventos.esmad.ipp.pt/plug-in/" class="btn saiba-mais">Sabe Mais!</a>
+            </div>
+        </section>
+        <section class="events">
+            <h2>Outros Eventos</h2>
+            <div class="events-container">
+                <div class="event-card">
+                    <img src="/assets/images/TSIWEndPoints/poster_convidados_2023.jpg"></img>
+                    <div class="event-info">
+                        <div class="name-year">
+                            <span class="name">TSIW EndPoints</span>
+                            <span class="year">2022</span>
+                        </div>
+                        <p class="summary">Resumo breve do Evento 1. Este evento foi focado em...</p>
+                        <a href="https://www.esmad.ipp.pt/noticias/tsiw-endpoints-2" class="btn saber-mais">Saber Mais!</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <video src="" muted></video>
+                    <div class="event-info">
+                        <div class="name-year">
+                            <span class="name">TSIW EndPoints</span>
+                            <span class="year">2023</span>
+                        </div>
+                        <p class="summary">Resumo breve do Evento 2. Este evento abordou...</p>
+                        <a href="#" class="btn saber-mais">Saber Mais!</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <video src="/assets/videos/event3.mp4" muted></video>
+                    <div class="event-info">
+                        <div class="name-year">
+                            <span class="name">Evento 3</span>
+                            <span class="year">2022</span>
+                        </div>
+                        <p class="summary">Resumo breve do Evento 3. A temática principal foi...</p>
+                        <a href="#" class="btn saber-mais">Saber Mais!</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <video src="/assets/videos/event4.mp4" muted></video>
+                    <div class="event-info">
+                        <div class="name-year">
+                            <span class="name">Evento 4</span>
+                            <span class="year">2022</span>
+                        </div>
+                        <p class="summary">Resumo breve do Evento 4. Este evento destacou-se por...</p>
+                        <a href="#" class="btn saber-mais">Saber Mais!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <center><h5 class="modal-title" id="LoginModalLabel"><img src="/assets/images/logo.png" alt=""></h5></center>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form">
+                        <div class="form-group">
+                          <label for="InputEmail">Email</label>
+                          <input type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="InputPassword">Password</label>
+                          <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                        </div>
+                        <br>
+                        <center><div class="form-check">
+                            <button class="btn" type="submit" id="enter-button">Entrar</button>
+                            <button class="btn" id="register-button">Registar</button></center>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="row text-white py-3 text-center justify-content-center">
+        <div class="col-md-3">
+            <img src="/assets/images/logo_pporto.png" alt="P.PORTO Logo" class="img-fluid mb-2">
+            <img src="/assets/images/logo_esmad.png" alt="P.PORTO Logo" class="img-fluid">
+
+        </div>
+        <div class="col-md-3">
+            <address>
+                Escola Superior de Media Artes e Design<br>
+                Rua D. Sancho I, n.º 981<br>
+                4480-876 Vila do Conde, Portugal<br>
+                Tel: +351 252 646 516<br>
+                Email: gmr@esmad.ipp.pt
+            </address>
+        </div>
+        <div class="col-md-3">
+            TSIW Connect © 2024<br>
+            Todos os direitos reservados<br>
+            Mapa do Site | Acessibilidade
+        </div>
+    </footer>
+</body>
+<script src="/assets/js/midia.js"></script>
+<script src="/assets/js/init.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/userModel.js"></script>
+<script src="/assets/js/userController.js"></script>
+<script src="/assets/js/navbarView.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</html>
