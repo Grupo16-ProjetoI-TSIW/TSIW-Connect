@@ -115,3 +115,6 @@ h4{
     background: linear-gradient(to bottom, #EA7317, #090B2D);
     border-radius: 5;
 }
+#projectList img{
+    height: 150px;
+}

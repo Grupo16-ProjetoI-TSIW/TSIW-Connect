@@ -29,7 +29,7 @@
                 <ul class="nav flex-column">
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start active" onclick="showPage('statistics', this)">Estatísticas da Aplicação</button></li>
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('users-container' , this)">Gerir Utilizadores</button></li>
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start">Gerir Testemunhos e Projetos</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('projects-container' , this)">Gerir Testemunhos e Projetos</button></li>
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start">Gerir Conteúdos Mídia</button></li>
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('question-list' , this)">Configurar Escape Room</button></li>
                 </ul>
@@ -66,6 +66,71 @@
                             
                         </div>
                     </div>
+                </div>
+                <div id="projects-container" class="page d-none">
+                    <div class="container mt-5">
+                        <h1 class="text-center text-white">Projetos</h1>
+                        <h3 class="text-white">Publicar um projeto</h3>
+                        <form id="projectForm">
+                          <div class="form-group">
+                            <label for="projectName" class="text-white">Nome do Projeto</label>
+                            <input type="text" class="form-control" id="projectName" placeholder="Nome do Projeto">
+                          </div>
+                          <div class="form-group">
+                            <label for="studentName" class="text-white">Aluno</label>
+                            <input type="text" class="form-control" id="studentName" placeholder="Aluno">
+                          </div>
+                          <div class="form-group">
+                            <label for="projectDate" class="text-white">Data</label>
+                            <input type="date" class="form-control" id="projectDate">
+                          </div>
+                          <div class="form-group">
+                            <label for="projectLink" class="text-white">Link</label>
+                            <input type="url" class="form-control" id="projectLink" placeholder="Link">
+                          </div>
+                          <div class="form-group">
+                            <label for="projectDescription" class="text-white">Descrição</label>
+                            <textarea class="form-control" id="projectDescription" rows="3" placeholder="Descrição"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="projectPoster" class="text-white">Poster</label>
+                            <input type="url" class="form-control" id="projectPoster" placeholder="Poster">
+                          </div>
+                          <button type="submit" class="btn btn-success">Publicar</button>
+                        </form>
+                    
+                        <h3 class="text-white mt-5">Gerir Projetos</h3>
+                        <div id="projectList" class="row"></div>
+                    
+                        <h1 class="text-center text-white mt-5">Testemunhos</h1>
+                        <h3 class="text-white">Publicar um Testemunho</h3>
+                        <form id="testimonialForm">
+                          <div class="form-group">
+                            <label for="testimonialName" class="text-white">Nome</label>
+                            <input type="text" class="form-control" id="testimonialName" placeholder="Nome">
+                          </div>
+                          <div class="form-group">
+                            <label for="profession" class="text-white">Profissão</label>
+                            <input type="text" class="form-control" id="profession" placeholder="Profissão">
+                          </div>
+                          <div class="form-group">
+                            <label for="testimonialDate" class="text-white">Data</label>
+                            <input type="date" class="form-control" id="testimonialDate">
+                          </div>
+                          <div class="form-group">
+                            <label for="testimonialDescription" class="text-white">Descrição</label>
+                            <textarea class="form-control" id="testimonialDescription" rows="3" placeholder="Descrição"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="testimonialPhoto" class="text-white">Foto</label>
+                            <input type="url" class="form-control" id="testimonialPhoto" placeholder="Poster">
+                          </div>
+                          <button type="submit" class="btn btn-success">Publicar</button>
+                        </form>
+                    
+                        <h3 class="text-white mt-5">Gerir Testemunhos</h3>
+                        <div id="testimonialList" class="row"></div>
+                      </div>
                 </div>
             </main>
         </div>
@@ -112,6 +177,82 @@
                         </form>
                     </div>
                     <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="editProjectModal" tabindex="-1" aria-labelledby="editProjectModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content custom-modal-background">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProjectModalLabel">Editar Projeto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProjectForm">
+                            <div class="mb-3">
+                                <label for="editProjectName" class="form-label">Nome do Projeto</label>
+                                <input type="text" class="form-control" id="editProjectName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProjectAluno" class="form-label">Nome do Aluno</label>
+                                <input type="text" class="form-control" id="editProjectAluno" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProjectDate" class="form-label">Data</label>
+                                <input type="text" class="form-control" id="editProjectDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProjectLink" class="form-label">Link do Projeto</label>
+                                <input type="text" class="form-control" id="editProjectLink" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProjectDescription" class="form-label">Descrição do Projeto</label>
+                                <textarea class="form-control" id="editProjectDescription" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProjectImage" class="form-label">URL da Imagem</label>
+                                <input type="text" class="form-control" id="editProjectImage" required>
+                            </div>
+                            <input type="hidden" id="editProjectId">
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="editTestimonialModal" tabindex="-1" aria-labelledby="editTestimonialModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content custom-modal-background">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editTestimonialModalLabel">Editar Testemunho</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editTestimonialForm">
+                            <div class="mb-3">
+                                <label for="editTestimonialName" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="editTestimonialName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editTestimonialProfession" class="form-label">Profissão</label>
+                                <input type="text" class="form-control" id="editTestimonialProfession" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editTestimonialDate" class="form-label">Data</label>
+                                <input type="text" class="form-control" id="editTestimonialDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editTestimonialPhoto" class="form-label">URL da Foto</label>
+                                <input type="text" class="form-control" id="editTestimonialPhoto" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editTestimonialDescription" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="editTestimonialDescription" rows="3" required></textarea>
+                            </div>
+                            <input type="hidden" id="editTestimonialId">
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -180,6 +321,14 @@
     <script src="/assets/js/salaDeJogosModel.js"></script>
     <script src="/assets/js/salaDeJogosController.js"></script>
     <script src="/assets/js/questionView.js"></script>
+    <script src="/assets/js/projetosModel.js"></script>
+    <script src="/assets/js/projetosView.js"></script>
+    <script src="/assets/js/projetosController.js"></script>
+    <script src="/assets/js/testemunhosModel.js"></script>
+    <script src="/assets/js/testemunhosView.js"></script>
+    <script src="/assets/js/testemunhosController.js"></script>
+
+
 
 
     <script>

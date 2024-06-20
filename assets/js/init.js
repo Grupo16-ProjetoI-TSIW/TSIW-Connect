@@ -160,6 +160,45 @@ function initdata() {
         ];
         localStorage.setItem("words", JSON.stringify(words));
     }
+    if (!localStorage.getItem("projects")) {
+        const projects = [
+            {
+                id: 1,
+                nome: 'Projeto',
+                aluno: 'Aluno',
+                data: '2023',
+                link: 'https://www.youtube.com/watch?v=MYfA2XtiCks',
+                descrição: 'Muito bom Projeto',
+                imagem: '/assets/images/projeto1.jpg',
+                projeto_mes: 1
+            },
+            {
+                id: 2,
+                nome: 'Projeto',
+                aluno: 'Aluno',
+                data: '2023',
+                link: 'https://www.youtube.com/watch?v=MYfA2XtiCks',
+                descrição: 'Muito bom Projeto',
+                imagem: '/assets/images/projeto1.jpg',
+                projeto_mes: 0
+            }
+        ];
+        localStorage.setItem("projects", JSON.stringify(projects));
+    }
+    if (!localStorage.getItem("testimonials")) {
+        const testimonials = [
+            {
+                id: 1,
+                nome: 'Testemunho',
+                profissao: 'Aluno',
+                data: '2023',
+                foto: 'https://www.youtube.com/watch?v=MYfA2XtiCks',
+                descrição: 'Muito bom Projeto',
+                
+            }
+        ];
+        localStorage.setItem("testimonials", JSON.stringify(testimonials));
+    }
 }
 
 document.addEventListener('DOMContentLoaded', initdata);
