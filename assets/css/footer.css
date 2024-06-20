@@ -1,14 +1,20 @@
 footer {
     background-color: #0b0e18;
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 footer address {
     margin: 0;
     font-style: normal;
+    text-align: center;
+    text-align: left;
 }
 
 footer img {
     width: 25%;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
