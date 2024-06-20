@@ -30,7 +30,7 @@
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start active" onclick="showPage('statistics', this)">Estatísticas da Aplicação</button></li>
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('users-container' , this)">Gerir Utilizadores</button></li>
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('projects-container' , this)">Gerir Testemunhos e Projetos</button></li>
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start">Gerir Conteúdos Mídia</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('midia-list' , this)">Gerir Conteúdos Mídia</button></li>
                     <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('question-list' , this)">Configurar Escape Room</button></li>
                 </ul>
             </nav>
@@ -132,8 +132,41 @@
                         <div id="testimonialList" class="row"></div>
                       </div>
                 </div>
+                <div id="midia-list" class="page d-none">
+                    <div class="container mt-5">
+                        <h1 class="text-center text-white">Conteúdos Midia</h1>
+                        <h3 class="text-white">Publicar</h3>
+                        <form id="MidiaForm">
+                          <div class="form-group">
+                            <label for="MidiaName" class="text-white">Nome</label>
+                            <input type="text" class="form-control" id="MidiaName" placeholder="Nome">
+                          </div>
+                          <div class="form-group">
+                            <label for="MidiaDate" class="text-white">Data</label>
+                            <input type="date" class="form-control" id="MidiaDate" placeholder="Aluno">
+                          </div>
+                          <div class="form-group">
+                            <label for="AdditionalLinks" class="text-white">Link adicional</label>
+                            <input type="url" class="form-control" id="AdditionalLinks">
+                          </div>
+                          <div class="form-group">
+                            <label for="Midia" class="text-white">Video/Foto</label>
+                            <input type="url" class="form-control" id="Midia" placeholder="Link">
+                          </div>
+                          <div class="form-group">
+                            <label for="MidiaDescription" class="text-white">Descrição</label>
+                            <textarea class="form-control" id="MidiaDescription" rows="3" placeholder="Descrição"></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-success">Publicar</button>
+                        </form>
+                    
+                        <h3 class="text-white mt-5">Gerir Midia</h3>
+                        <div id="MidiaList" class="row"></div>
+                      </div>
+                </div>
             </main>
         </div>
+       
         <div class="modal fade" id="editQuestionModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content custom-modal-background">
@@ -257,6 +290,43 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="editMidiaModal" tabindex="-1" aria-labelledby="editMidiaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content custom-modal-background">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editMidiaModalLabel">Editar Mídia</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editMidiaForm">
+                            <div class="mb-3">
+                                <label for="editMidiaName" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="editMidiaName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMidiaDate" class="form-label">Data</label>
+                                <input type="text" class="form-control" id="editMidiaDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMidiaLink" class="form-label">Link Adicional</label>
+                                <input type="text" class="form-control" id="editMidiaLink" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMidiaType" class="form-label">Tipo de Mídia</label>
+                                <input type="text" class="form-control" id="editMidiaType" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editMidiaDescription" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="editMidiaDescription" rows="3" required></textarea>
+                            </div>
+                            <input type="hidden" id="editMidiaId">
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="modal-body fade">
             <form id="editQuestionForm">
                 <div class="mb-3">
@@ -327,6 +397,9 @@
     <script src="/assets/js/testemunhosModel.js"></script>
     <script src="/assets/js/testemunhosView.js"></script>
     <script src="/assets/js/testemunhosController.js"></script>
+    <script src="/assets/js/MidiaModel.js"></script>
+    <script src="/assets/js/MidiaView.js"></script>
+    <script src="/assets/js/MidiaController.js"></script>
 
 
 
