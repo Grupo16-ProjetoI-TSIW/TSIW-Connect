@@ -13,7 +13,7 @@ class UserController {
                 console.log(`Utilizador ${user.email} logado como administrador.`);
                 window.location.href = '/pages/admin/adminDashboard.html';
             } else {
-                window.location.href = '/pages/user/salaDeJogos.html';
+                window.location.href = '/public/index.html';
             }
         } else {
             alert('Credenciais inválidas. Por favor, tente novamente.');
