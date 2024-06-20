@@ -193,11 +193,24 @@ function initdata() {
                 profissao: 'Aluno',
                 data: '2023',
                 foto: 'https://www.youtube.com/watch?v=MYfA2XtiCks',
-                descrição: 'Muito bom Projeto',
+                descrição: 'Muito bom Projeto'
                 
             }
         ];
         localStorage.setItem("testimonials", JSON.stringify(testimonials));
+    }
+    if (!localStorage.getItem("midia")) {
+        const testimonials = [
+            {
+                id: 1,
+                nome: 'midia',
+                data: '2023',
+                link: 'https://www.youtube.com/watch?v=MYfA2XtiCks',
+                descrição: 'Muito bom Projeto',
+                midia: ''
+            }
+        ];
+        localStorage.setItem("midia", JSON.stringify(midia));
     }
 }
 
