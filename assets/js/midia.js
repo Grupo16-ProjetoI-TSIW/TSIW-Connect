@@ -9,18 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     setInterval(updateCarousel, 5000);
-
-
-    const videos = document.querySelectorAll('.event-card video');
-    
-    videos.forEach(video => {
-        video.addEventListener('mouseover', () => {
-           video.play();
-        });
-    
-        video.addEventListener('mouseout', () => {
-            video.pause();
-            video.currentTime = 0;
-        });
-    });
 });

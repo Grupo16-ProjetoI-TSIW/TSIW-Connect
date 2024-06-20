@@ -123,14 +123,17 @@ body {
     background-color: #1a2238;
 }
 
-.event-card video {
+.event-card img {
     width: 100%;
     height: auto;
+    max-width: 100%;
+    max-height: calc(100% - 60px);
+    object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-.event-card video:hover {
+.event-card img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
