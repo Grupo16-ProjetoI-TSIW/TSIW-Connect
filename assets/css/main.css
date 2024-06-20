@@ -165,6 +165,7 @@ main {
 }
 
 .projetos h2 {
+    font-family: Orbitron;
     font-size: 1.8em;
     margin-bottom: 10px;
     color: #ff8c00;
@@ -244,6 +245,7 @@ main {
 }
 
 .testemunhos h2 {
+    font-family: Orbitron;
     font-size: 1.8em;
     margin-bottom: 10px;
     color: #ff8c00;
@@ -322,6 +324,7 @@ main {
 }
 
 .parceiros h2 {
+    font-family: Orbitron;
     font-size: 1.8em;
     margin-bottom: 20px;
     color: #ff8c00;
@@ -338,6 +341,46 @@ main {
     max-width: 150px;
     max-height: 100px;
     object-fit: contain;
+}
+
+.plano-curricular {
+    padding: 40px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.plano-curricular h2 {
+    font-family: Orbitron;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ff8c00;
+}
+
+.plano-curricular p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.visitar-vr {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: #ff8c00;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.visitar-vr:hover {
+    background-color: #e67e00;
 }
 
 .custom-modal-background {
