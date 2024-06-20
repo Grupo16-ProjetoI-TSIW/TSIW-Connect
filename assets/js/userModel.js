@@ -21,7 +21,9 @@ class UserModel {
         users = users.filter(user => user.id !== id);
         localStorage.setItem('users', JSON.stringify(users));
     }
+    saveUsers(users) {
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 }
 
-// Anexa a classe UserModel ao objeto window para estar disponível globalmente
 window.UserModel = UserModel;

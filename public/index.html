@@ -172,10 +172,38 @@
                         <br>
                         <center><div class="form-check">
                             <button class="btn" type="submit" id="enter-button">Entrar</button>
-                            <button class="btn" id="register-button">Registar</button></center>
+                            <button class="btn" type="button" onclick="RegisterPage()"  id="register-button">Registar</button></center>
                       </form>
                 </div>
                 <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-background">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Registrar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="registerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerNickname" class="form-label">Nickname</label>
+                            <input type="text" class="form-control" id="registerNickname" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -208,5 +236,4 @@
 <script src="/assets/js/userController.js"></script>
 <script src="/assets/js/navbarView.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </html>
