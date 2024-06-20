@@ -1,3 +1,4 @@
+
 class QuestionController {
     constructor(model, view) {
         this.model = model;
@@ -28,6 +29,12 @@ class QuestionController {
         });
 
         this.view.bindOptionClick(this.handleOptionClick.bind(this));
+    }
+    updateQuestion(updatedQuestion) {
+        this.model.updateQuestion(updatedQuestion, updatedQuestion.id_pergunta);
+    }
+    editQuestion(questionId, updatedQuestion) {
+        return this.questionModel.editQuestion(questionId, updatedQuestion);
     }
     startGame() {
         document.getElementById('initial-page').style.display = 'none';
@@ -62,6 +69,15 @@ class QuestionController {
         this.view.renderQuestion(question);
         this.view.showModal();
     }
+    updateScore(finalScore) {
+        const loggedUser = JSON.parse(sessionStorage.getItem('loggedUser'));
+        if (loggedUser) {
+            loggedUser.pontuacao += finalScore;
+            sessionStorage.setItem('loggedUser', JSON.stringify(loggedUser));
+            console.log('Pontuação atualizada:', loggedUser.pontuacao);
+            return true;
+        }
+    }
 
     handleOptionClick(index) {
         const selectedOption = this.view.modalBody.querySelector(`.option-btn[data-index="${index}"]`).innerText;
@@ -82,6 +98,7 @@ class QuestionController {
             console.log(this.questions.length);
             if (respostasCorretas=== this.questions.length) {
                 const finalScore = this.view.calculateFinalScore();
+                this.updateScore(finalScore);
                 this.view.showWinModal(finalScore);
             }
         } else {
@@ -100,4 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const model = new QuestionModel();
     const view = new QuestionView();
     const controller = new QuestionController(model, view);
+    const Usermodel = new UserModel();
 });
+
+

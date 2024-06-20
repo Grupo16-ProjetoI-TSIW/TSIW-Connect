@@ -1,3 +1,4 @@
+@import url(/assets/fonts/fonts.css);
 body {
     font-family: 'Rajdhani', sans-serif;
     background-color: #0d1326;
@@ -48,4 +49,69 @@ h4{
     font-family: 'Orbitron';
     font-weight: bold;
     margin-bottom: 25px;
+}
+.page {
+    display: none;
+}
+
+.page.d-none {
+    display: none;
+}
+.page.d-none but {
+    display: none;
+}
+
+.page:not(.d-none) {
+    display: block;
+}
+
+#users-container img{
+    width: 15%;
+}
+.question-card {
+    font-size: 1.2em;
+    padding: 20px;
+}
+
+.question-text {
+    font-size: 1.5em; 
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.option-text {
+    font-size: 1.3em;
+    margin-bottom: 10px; 
+}
+
+.correct-option {
+    font-size: 1.3em;
+    color: green; 
+    margin-bottom: 20px;
+}
+.card{
+    min-height: 270px;
+}
+
+#users-container .card-body {
+    padding: 30px; 
+}
+.custom-modal-background {
+    background-color: #131a2c;
+    color: #ffffff;
+}
+
+.custom-modal-background .modal-header,
+.custom-modal-background .modal-footer {
+    border-color: #0b1221;
+}
+
+.modal img {
+    width: 70%;
+    height: auto;
+}
+
+#register-button, #enter-button {
+    background: linear-gradient(to bottom, #EA7317, #090B2D);
+    border-radius: 5;
 }

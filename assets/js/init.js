@@ -5,11 +5,36 @@ function initdata() {
                 id: 1,
                 tipo: 'admin',
                 nickname: 'admin123',
-                email:'admin123@gmail.com',
+                email: 'admin123@gmail.com',
                 nome: 'Administrador',
                 password: '1234',
                 nivel: 1,
-                pontuacao: 0
+                pontuacao: 0,
+                foto_perfil:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShN0nuLT7HIpIANuDi6wbMKpeuCgZsl2PtAA&s'
+            },
+            {
+                id: 2,
+                tipo: 'user',
+                nickname: 'user456',
+                email: 'user456@gmail.com',
+                nome: 'User One',
+                password: 'password1',
+                nivel: 1,
+                pontuacao: 0,
+                foto_perfil:'https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg'
+
+            },
+            {
+                id: 3,
+                tipo: 'user',
+                nickname: 'user789',
+                email: 'user789@gmail.com',
+                nome: 'User Two',
+                password: 'password2',
+                nivel: 1,
+                pontuacao: 0,
+                foto_perfil:'https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg'
+
             }
         ];
         localStorage.setItem("users", JSON.stringify(users));

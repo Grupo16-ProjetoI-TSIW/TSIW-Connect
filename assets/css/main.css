@@ -356,9 +356,10 @@ main {
 }
 
 #register-button, #enter-button {
-    background-color: #ff8c00;
+    background: linear-gradient(to bottom, #EA7317, #090B2D);
     border-radius: 5;
 }
+
 
 .btn-close {
     background-color: #ffffff;

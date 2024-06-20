@@ -19,43 +19,141 @@
             <div class="col-md-6 text-center">
                 <h1>Admin Dashboard</h1>
             </div>
-            <div class="col-md-3 text-right">
-                <button class="btn btn-primary">Sair do Painel</button>
+            <div class="col-md-3 text-end">
+                <a href="javascript:void(0)" id="logout-button"><button class="btn btn-primary">Sair do Painel</button></a>
             </div>
         </header>
         <div class="row">
             <nav class="col-md-2 text-white p-3">
                 <h4>Menu Admin</h4>
                 <ul class="nav flex-column">
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left active">Estatísticas da Aplicação</button></li>
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Gerir Utilizadores</button></li>
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Gerir Testemunhos e Projetos</button></li>
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Gerir Conteúdos Mídia</button></li>
-                    <li class="nav-item"><button class="btn btn-secondary btn-block text-left">Configurar Escape Room</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start active" onclick="showPage('statistics', this)">Estatísticas da Aplicação</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('users-container' , this)">Gerir Utilizadores</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start">Gerir Testemunhos e Projetos</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start">Gerir Conteúdos Mídia</button></li>
+                    <li class="nav-item"><button class="btn btn-secondary btn-block text-start" onclick="showPage('question-list' , this)">Configurar Escape Room</button></li>
                 </ul>
             </nav>
             <main class="col-md-10 p-4">
-                <div class="row mb-4">
-                    <div class="col-md-8 text-center">
-                        <h2>Média de Utilizadores em Simultâneo</h2>
-                        <div class="card bg-secondary text-white p-3"></div>
+                <div id="statistics" class="page">
+                    <div class="row mb-4">
+                        <div class="col-md-8 text-center">
+                            <h2>Média de Utilizadores em Simultâneo</h2>
+                            <div class="card bg-secondary text-white p-3"></div>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <h2>Número de Visitas</h2>
+                            <div class="card bg-secondary text-white p-3"></div>
+                        </div>
+                        <div class="col-md-8 text-center">
+                            <h2>Páginas Mais Visitadas</h2>
+                            <div class="card bg-secondary text-white p-3"></div>
+                        </div>
                     </div>
-                    <div class="col-md-8 text-center">
-                        <h2>Número de Visitas</h2>
-                        <div class="card bg-secondary text-white p-3"></div>
+                </div>
+                <div id="users-container" class="page d-none">
+                    <h2>Utilizadores</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            
+                        </div>
                     </div>
-                    <div class="col-md-8 text-center">
-                        <h2>Páginas Mais Visitadas</h2>
-                        <div class="card bg-secondary text-white p-3"></div>
+                </div>
+                <div id="question-list" class="page d-none">
+                    <h2>Questões</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-3">
+                            
+                        </div>
                     </div>
                 </div>
             </main>
+        </div>
+        <div class="modal fade" id="editQuestionModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content custom-modal-background">
+                    <div class="modal-header">
+                        <center><h5 class="modal-title"><img src="/assets/images/logo.png" alt=""></h5></center>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editQuestionForm">
+                            <div class="mb-3">
+                                <label for="editQuestionText" class="form-label">Pergunta</label>
+                                <textarea id="editQuestionText" class="form-control" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editOption1" class="form-label">Opção 1</label>
+                                <input type="text" class="form-control" id="editOption1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editOption2" class="form-label">Opção 2</label>
+                                <input type="text" class="form-control" id="editOption2" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editOption3" class="form-label">Opção 3</label>
+                                <input type="text" class="form-control" id="editOption3" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editOption4" class="form-label">Opção 4</label>
+                                <input type="text" class="form-control" id="editOption4" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editCorrectOption" class="form-label">Opção Correta</label>
+                                <select class="form-select" id="editCorrectOption" required>
+                                    <option value="opção_1">Opção 1</option>
+                                    <option value="opção_2">Opção 2</option>
+                                    <option value="opção_3">Opção 3</option>
+                                    <option value="opção_4">Opção 4</option>
+                                </select>
+                            </div>
+                            <input type="hidden" id="editQuestionId">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-body fade">
+            <form id="editQuestionForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="editQuestionText" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editOption1" class="form-label">Opção 1</label>
+                    <input type="text" class="form-control" id="editOption1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editOption2" class="form-label">Opção 2</label>
+                    <input type="text" class="form-control" id="editOption2" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editOption3" class="form-label">Opção 3</label>
+                    <input type="text" class="form-control" id="editOption3" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editOption4" class="form-label">Opção 4</label>
+                    <input type="text" class="form-control" id="editOption4" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editCorrectOption" class="form-label">Opção Correta</label>
+                    <select class="form-select" id="editCorrectOption" required>
+                        <option value="opção_1">Opção 1</option>
+                        <option value="opção_2">Opção 2</option>
+                        <option value="opção_3">Opção 3</option>
+                        <option value="opção_4">Opção 4</option>
+                    </select>
+                </div>
+                <input type="hidden" id="editQuestionId">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
         </div>
         <footer class="row text-white py-3 text-center justify-content-center">
             <div class="col-md-3">
                 <img src="/assets/images/logo_pporto.png" alt="P.PORTO Logo" class="img-fluid mb-2">
                 <img src="/assets/images/logo_esmad.png" alt="P.PORTO Logo" class="img-fluid">
-
             </div>
             <div class="col-md-3">
                 <address>
@@ -73,7 +171,55 @@
             </div>
         </footer>
     </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/assets/js/userModel.js"></script>
+    <script src="/assets/js/userController.js"></script>
+    <script src="/assets/js/navbarView.js"></script>
+    <script src="/assets/js/userAuthView.js"></script>
+    <script src="/assets/js/salaDeJogosView.js"></script>
+    <script src="/assets/js/salaDeJogosModel.js"></script>
+    <script src="/assets/js/salaDeJogosController.js"></script>
+    <script src="/assets/js/questionView.js"></script>
 
+
+    <script>
+        function showPage(pageId,button) {
+            document.querySelectorAll('.page').forEach(page => page.classList.add('d-none'));
+            document.getElementById(pageId).classList.remove('d-none');
+            document.querySelectorAll('.nav-item .btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const loggedUser = window.UserController.getLoggedUser();
+            const logoutMenuItem = document.getElementById('logout-menu-item');
+
+            if (loggedUser) {
+                logoutMenuItem.style.display = 'block';
+                document.querySelector('.profile-icon').style.display = 'none';
+            }
+
+            document.getElementById('logout-button').addEventListener('click', function() {
+                window.UserController.logout();
+            });
+
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const email = document.getElementById('InputEmail').value;
+                const password = document.getElementById('InputPassword').value;
+
+                console.log('Email:', email);  
+                console.log('Password:', password);  
+
+                window.UserController.verifyCredentials(email, password);
+            });
+        });
+
+        document.getElementById('logout-button').addEventListener('click', function() {
+            window.UserController.logout();
+        });
+    </script>
+</body>
 </html>
