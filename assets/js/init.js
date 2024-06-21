@@ -200,7 +200,7 @@ function initdata() {
         localStorage.setItem("testimonials", JSON.stringify(testimonials));
     }
     if (!localStorage.getItem("midia")) {
-        const testimonials = [
+        const midia = [
             {
                 id: 1,
                 nome: 'midia',

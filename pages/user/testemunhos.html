@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSIW Connect</title>
+    <link rel="stylesheet" href="/assets/css/projetos.css">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/public/index.html"><img src="/assets/images/logo.png" alt="logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/public/index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/projetos.html">Projetos</a></li>
+                        <li><a href="/pages/user/testemunhos.html">Testemunhos</a></li>
+                        <li><a href="/assets/ProjetoWebXR-main/index.html">Plano Curricular</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">TSIW EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/salaDeJogos.html">Sala de Jogos</a></li>
+                        <li><a href="/pages/user/midia.html">Conteúdos Mídia</a></li>
+                    </ul>
+                </li>
+                <li><a class="profile-icon" id="profile-icon"><img src="/assets/images/profile-icon.png" alt="" data-bs-toggle="modal" data-bs-target="#LoginModal"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="Testemunhos">
+            <h1>Testemunhos</h1>
+            <p>Fica a conhecer o curso através daqueles que o puderam experienciar!</p>
+
+            <div id="testemunhos-container" class="projectos-container"></div>
+
+            <a href="/pages/user/projetos.html">&rarr;</a>
+        </section>
+    </main>
+    <footer>
+        <!-- Add footer content here if needed -->
+    </footer>
+    <script src="/assets/js/init.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = [
+                {
+                    id: 1,
+                    nome: 'Testemunho',
+                    profissao: 'Aluno',
+                    data: '2023',
+                    foto: 'https://www.youtube.com/watch?v=MYfA2XtiCks',
+                    descrição: 'Muito bom Projeto'
+                }
+            ];
+
+            localStorage.setItem('testimonials', JSON.stringify(testimonials));
+
+            const testimonialsContainer = document.getElementById('testemunhos-container');
+            const storedTestimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+
+            storedTestimonials.forEach(testimonial => {
+                const testimonialGroup = document.createElement('div');
+                testimonialGroup.classList.add('project-group');
+
+                const testimonialCard = document.createElement('div');
+                testimonialCard.classList.add('project-card');
+                testimonialCard.innerHTML = `
+                    <img src="${testimonial.foto}" alt="Foto de ${testimonial.nome}" class="project-image">
+                    <p>${testimonial.nome}</p>
+                `;
+
+                const testimonialInfo = document.createElement('div');
+                testimonialInfo.classList.add('info');
+                testimonialInfo.innerHTML = `
+                    <h1>${testimonial.profissao}</h1>
+                    <h2 class="year">${testimonial.data}</h2>
+                    <p class="information">${testimonial.descrição}</p>
+                `;
+
+                testimonialGroup.appendChild(testimonialCard);
+                testimonialGroup.appendChild(testimonialInfo);
+                testimonialsContainer.appendChild(testimonialGroup);
+            });
+        });
+    </script>
+</body>
+</html>

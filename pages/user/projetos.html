@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSIW Connect</title>
+    <link rel="stylesheet" href="/assets/css/projetos.css">
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/public/index.html"><img src="/assets/images/logo.png" alt="logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/public/index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#">TSIW</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/projetos.html">Projetos</a></li>
+                        <li><a href="/pages/user/testemunhos.html">Testemunhos</a></li>
+                        <li><a href="/assets/ProjetoWebXR-main/index.html">Plano Curricular</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">TSIW EXPERIENCE</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/user/salaDeJogos.html">Sala de Jogos</a></li>
+                        <li><a href="/pages/user/midia.html">Conteúdos Mídia</a></li>
+                    </ul>
+                </li>
+                <li><a class="profile-icon" id="profile-icon"><img src="/assets/images/profile-icon.png" alt="" data-bs-toggle="modal" data-bs-target="#LoginModal"></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <div id="projeto-do-mes" style="display: none;">
+                <h1>Projeto do Mês</h1>
+                <p id="projeto-do-mes-info">Aluno - 204 - Unidade Curricular - Tema do Projeto</p>
+                <div class="Projecto-1">
+                    <img id="projeto-do-mes-img" class="project-image" alt="Imagem do projeto do mês">
+                    <p id="projeto-do-mes-nome">Nome do Site</p>
+                </div>
+            </div>
+
+            <div id="projectos-container" class="projectos-container"></div>
+
+            <a href="/pages/user/projetos.html">&rarr;</a>
+        </section>
+    </main>
+    <footer>
+        <!-- Add footer content here if needed -->
+    </footer>
+    <script src="/assets/js/init.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectsContainer = document.getElementById('projectos-container');
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            const projetoDoMesSection = document.getElementById('projeto-do-mes');
+            const projetoDoMesInfo = document.getElementById('projeto-do-mes-info');
+            const projetoDoMesImg = document.getElementById('projeto-do-mes-img');
+            const projetoDoMesNome = document.getElementById('projeto-do-mes-nome');
+
+            projects.forEach(project => {
+                if (project.projeto_mes === 1) {
+                    projetoDoMesSection.style.display = 'block';
+                    projetoDoMesInfo.textContent = `${project.aluno}`;
+                    projetoDoMesImg.src = project.imagem;
+                    projetoDoMesNome.textContent = project.nome;
+                }
+                
+                const projectGroup = document.createElement('div');
+                projectGroup.classList.add('project-group');
+
+                const projectCard = document.createElement('div');
+                projectCard.classList.add('project-card');
+                projectCard.innerHTML = `
+                    <img src="${project.imagem}" alt="Imagem do projeto" class="project-image">
+                    <p>${project.nome}</p>
+                `;
+                projectCard.innerHTML = `<p>${project.nome}</p>`;
+
+                const projectInfo = document.createElement('div');
+                projectInfo.classList.add('info');
+                projectInfo.innerHTML = `
+                    <h1>${project.aluno}</h1>
+                    <h2 class="year">${project.data}</h2>
+                    <p class="information">${project.descrição}</p>
+                `;
+
+                projectGroup.appendChild(projectCard);
+                projectGroup.appendChild(projectInfo);
+                projectsContainer.appendChild(projectGroup);
+            });
+        });
+    </script>
+</body>
+</html>
